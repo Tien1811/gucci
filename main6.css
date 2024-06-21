@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+:root {
+    --main-color: white;
+    --black: #131313;
+    --bg: #010101;
+    --border: 5px solid rgba(255, 255, 255, 0.75);
+}
+
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+    scroll-padding-top: 10rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+   width: .100px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 2px;
+}
+
+body {
+    background: var(--main-color);
+}
+
+.header {
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.header .logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.header .navbar a {
+   color: white;
+   text-decoration: wavy;
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 20px;
+   margin: 0;
+   padding: 0;
+   display: inline-flex;
+   float: left;
+   margin-left: 30px;
+   cursor: pointer;
+}
+
+
+.header .navbar a:hover {
+    display: inline-flex;
+    border-bottom: 2px solid rgb(250, 94, 37);
+    padding-bottom: 5px;
+}
+
+.header .icons div {
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    float: left;
+    margin-left: 15px;
+}
+
+.header .icons div:hover {
+    color: rgb(248, 95, 40);
+   border-bottom: 2px solid rgb(250, 94, 37);
+   padding-bottom: 5px;   
+}
+
+.header .search-form {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+
+}
+
+.header .search-form input {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    color: black;
+    padding: 5px;
+    text-transform: none;
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-size: 15px;
+    color: black;
+}
+
+.header .search-form label:hover {
+    color: black;
+}
+
+.product-items {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1500px;
+    margin: 30px auto;
+}
+
+.product-item {
+    background-color: white;
+    float: left;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.product-item img {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform  0.3s ease;
+}
+
+.product-item img:hover {
+    transform: translateY(-10px);
+}
+
+.product-item p {
+    color: rgb(245, 41, 41);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.product-item h1 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-size: lighter;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.product-item h1:hover {
+    display: flex;
+    color:rgb(167, 167, 238);
+}
+
+.product-item button {
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: rgb(252, 115, 66);
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    width: 150px;
+    height: 30px;
+    border: 1px solid rgb(247, 172, 125);
+    transform: all 0.3s ease;
+}
+
+.product-item button:hover{
+    display: flex;
+    color: white;
+    background-color: rgb(247, 86, 28);
+}
+
+.cart {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+    
+}
+
+.cart h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bolder;
+    display: flex;
+    color: black;
+}
+
+.cart table {
+    width: 100%;
+}
+
+.cart table thead tr th:first-child {
+    text-align: left;
+}
+
+.cart table tr td {
+    border: 1px solid black;
+    padding: 15px 0;
+}
+
+tr img {
+    transition: all 0.3s ease;
+}
+
+tr img:hover {
+    transform: translateY(-10px);
+}
+
+td img {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+td input {
+    width: 40px;
+    outline: none;
+}
+
+footer {
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 80px;
+}
+
+.list-item a {
+    display: inline-block;
+    text-decoration: wavy;
+    color: white;
+    float: left;
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: lighter;
+    position:relative;
+    bottom: 25px;
+}
+
+.footer-icon i {
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    left: 200%;
+}
+
+.form {
+    display: inline-flex;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-left: 600px;
+}
+
+.form-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid  #ccc;
+    border-radius: 5px;
+}
+
+.sub-btn {
+    width: 100px;
+    height: 30px;
+    padding: 5px 5px;
+    background-color: #2bf73c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    background-color: #03940f;
+}

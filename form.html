@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản</title>
+    <link rel="stylesheet" href="./form.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <header class="header">
+       <a href="./index.html" class="logo">
+        <img src="./anh/logo.png" alt="" width="100" height="100">
+       </a>
+       <nav class="navbar">
+         <a href="./index.html"><i class="fa-solid fa-house"></i>Trang Chủ</a>
+         <a href="./index3.html">Sản Phẩm</a>
+         <a href="./index5.html">Giới Thiệu</a>
+         <a href="#">Đơn hàng</a>
+         <a href="./index7.html">Tin Tức</a>
+         <a href="./index4.html"><i class="fa-solid fa-phone"></i>Liên Hệ</a>
+       </nav>
+       <div class="icons">
+       <a href="./index2.html"><div class="fas fa-search" id="search-btn"></div></a>
+       <a href="#"><div class="fas fa-bell" id="bell-btn"></div></a>
+       <a href="./index6.html"><div class="fas fa-cart-arrow-down" id="cart-btn"></div></a>
+       <a href="./form.html"><div class="fas fa-user" id="bars-btn"></div></a>
+       </div>
+   </header>
+    <main>
+      <div class="container">
+      <div id="loginContainer">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm" onsubmit="return false;" class="form">
+          <div class="form-group">
+            <input type="text" id="loginUsername" name="loginUsername" placeholder="Tài Khoản..." required>
+            <i class="fa fa-user" aria-hidden="true" id="loginUsername" style="position: relative; bottom: 30px;"></i>
+          </div>
+          <div class="form-group">
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Mật khẩu..." required>
+            <i class="fa fa-unlock-alt" aria-hidden="true" id="loginPassword" style="position: relative; bottom: 30px;"></i>
+          </div>
+          <button type="submit" onclick="login()">Đăng Nhập</button>
+          <p>Nếu bạn chưa có tài khoản<a href="#" onclick="toggleForm('register')">Đăng Ký</a></p>
+        </form>
+      </div>
+      <div id="registerContainer" style="display: none;">
+        <h2>Đăng ký</h2>
+        <form id="registerForm" onsubmit="return false;" class="form">
+          <div class="form-group">
+            <input type="text" id="registerUsername" name="registerUsername" placeholder="Nhập Họ Tên..." required>
+            <i class="fa fa-user" aria-hidden="true" id="registerUsername" style="position: relative; bottom: 30px;"></i>
+          </div>
+          <div class="form-group">
+            <input type="email" name="registerGmail" name="registerGmail" placeholder="Gmail..." required>
+            <i class="fa fa-envelope" aria-hidden="true" id="registerGmail" style="position: relative; bottom:30px;"></i>
+          </div>
+          <div class="form-group">
+            <input type="number" name="registerPhone" name="registerPhone" placeholder="Số điện thoại..." required>
+            <i class="fa fa-phone" aria-hidden="true" id="registerPhone" style="position: relative; bottom: 30px;"></i>
+          </div>
+          <div class="form-group">
+            <input type="password" name="registerPassword" id="registerPassword" placeholder="Nhập Mật Khẩu..." required>
+            <i class="fa fa-unlock-alt" aria-hidden="true" id="registerPassword" style="position: relative; bottom: 30px;"></i>
+          </div>
+          <div class="form-group">
+            <input type="password" name="registerReset" id="registerReset" placeholder="Nhập lại mật khẩu..." required>
+            <i class="fa fa-unlock-alt" aria-hidden="true" id="registerReset" style="position: relative; bottom: 30px;"></i>
+          </div>
+          <button type="submit" onclick="register()">Đăng Ký</button>
+          <p>Nếu bạn đã có tài khoản<a href="#" onclick="toggleForm('login')">Đăng Nhập</a></p>
+        </form>
+      </div>
+      </div>
+    </main>
+    <footer>
+      <div class="list-item">
+        <ul class="text-center mb-4" style="color: white; font-size: 25px; font-weight:bolder;">Về Chúng Tôi</ul>
+        <a href="./index5.html">Giới thiệu</a>
+        <a href="#">Hệ Thống cửa hàng</a>
+        <a href="#">Liên Hệ</a>
+        <a href="#">Tin Tức</a>
+       </div>
+       <div class="footer-icon">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-signal-messenger"></i></a>
+        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+       </div>
+    </footer>
+    <script type="text/javascript">
+      function login() {
+        let username = document.getElementById("loginUsername").value;
+        let password = document.getElementById("loginPassword").value;
+        if(username === password) {
+          alert("Đăng Nhập Thành công!");
+          return;
+        }else if(username.length < 5 || password.length < 5) {
+          alert("Tài khoản và mật khẩu phải có ít nhất 5 kí tự");
+          return;
+        }
+      }
+      function register() {
+        let newUsername = document.getElementById("registerUsername").value;
+        let newPassword = document.getElementById("registerPassword").value;
+        let newEmail = document.getElementById("registerGmail").value;
+        let newPhone = document.getElementById("registerPhone").value;
+        let newReset = document.getElementById("registerReset").value;
+       if(newUsername === newEmail === newPassword === newPhone === newReset) {
+        alert("Đăng Ký thành công! Bạn có thể Đăng Nhập ngay bây giờ.");
+        return;
+       }else if(newPassword !== newReset) {
+        alert("Đăng Nhập Không thành công! Mật Khẩu không khớp");
+        return;
+       }else {
+        alert("Vui lòng điền vào tất cả thông tin.");
+        return;
+       }
+      }
+      
+      function toggleForm(formType) {
+        if (formType === 'register') {
+          document.getElementById("loginContainer").style.display = "none";
+          document.getElementById("registerContainer").style.display = "block";
+        } else if (formType === 'login') {
+          document.getElementById("registerContainer").style.display = "none";
+          document.getElementById("loginContainer").style.display = "block";
+        }
+      }
+    </script>
+  </body>
+  </html>
+  
